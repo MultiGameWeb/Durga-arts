@@ -16,8 +16,8 @@ a{color:inherit}
 .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
 header{position:sticky;top:0;z-index:20;background:rgba(255,250,242,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
-.logo{font-weight:800;color:var(--brand2);text-decoration:none;font-size:1.05rem}
-.logo span{color:var(--brand)}
+.logo{font-weight:800;color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand2));text-decoration:none;font-size:1.15rem;letter-spacing:.2px;padding:6px 16px;border-radius:999px;box-shadow:0 4px 14px rgba(194,65,12,.35)}
+.logo span{color:#ffedd5}
 nav{display:flex;gap:18px;font-size:.92rem}
 nav a{text-decoration:none;color:var(--muted)}
 nav a:hover{color:var(--brand)}
@@ -59,9 +59,6 @@ h2{font-size:1.7rem;color:var(--brand2);margin-bottom:6px}
 .clients{display:flex;flex-wrap:wrap;gap:10px}
 .clients span{background:#fff;border:1px solid var(--line);padding:10px 18px;border-radius:12px;font-weight:600;color:var(--brand2)}
 .alt{background:#fff3e2}
-.steps{counter-reset:s;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-.steps div{background:#fff;border-radius:14px;padding:18px;border:1px solid var(--line);counter-increment:s}
-.steps div::before{content:counter(s);display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;margin-bottom:8px}
 .about{display:grid;gap:24px;grid-template-columns:1fr}
 .contact-box{background:var(--brand2);color:#fff;border-radius:22px;padding:36px 24px;text-align:center}
 .contact-box h2{color:#fff}
@@ -166,17 +163,7 @@ section{scroll-margin-top:64px}
 <section id="clients"><div class="wrap">
   <h2>Places We Have Worked</h2><p class="sub">Schools and play schools across Hyderabad.</p>
   <div class="clients">
-    <span>Krishnaveni Schools</span><span>TVR Model Schools</span><span>Gowtham Model Schools</span><span>SR DG Schools</span><span>+ Chala Play Schools</span>
-  </div>
-</div></section>
-
-<section class="alt"><div class="wrap">
-  <h2>How We Work</h2><p class="sub">Four simple steps.</p>
-  <div class="steps">
-    <div class="rv"><b>Call / WhatsApp</b><br><small>Send a photo of your wall and tell us the theme you want.</small></div>
-    <div class="rv"><b>Design &amp; Quote</b><br><small>We share an idea and a price.</small></div>
-    <div class="rv"><b>Painting</b><br><small>Work starts with quality paints.</small></div>
-    <div class="rv"><b>Finish</b><br><small>Handover after your approval.</small></div>
+    <span>Krishnaveni Schools</span><span>TVR Model Schools</span><span>Gowtham Model Schools</span><span>SR DG Schools</span><span>+ Many Play Schools</span>
   </div>
 </div></section>
 
