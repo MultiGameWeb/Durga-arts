@@ -55,7 +55,8 @@ h2{font-size:1.7rem;color:var(--brand2);margin-bottom:6px}
 .grid figure.hide{display:none}
 .grid img{width:100%;height:auto;transform:translate3d(0,var(--py,0px),0) scale(1.1);will-change:transform}
 .grid figure:hover{box-shadow:0 8px 22px rgba(124,45,18,.18)}
-.grid figcaption{padding:10px 12px;font-size:.88rem;color:var(--muted)}
+.ph{overflow:hidden;line-height:0}
+.grid figcaption{position:relative;z-index:1;background:#fff;padding:10px 12px;font-size:.88rem;color:var(--muted)}
 .clients{display:flex;flex-wrap:wrap;gap:10px}
 .clients span{background:#fff;border:1px solid var(--line);padding:10px 18px;border-radius:12px;font-weight:600;color:var(--brand2)}
 .alt{background:#fff3e2}
@@ -141,22 +142,22 @@ section{scroll-margin-top:64px}
     <button data-f="wall">Wall Art</button>
   </div>
   <div class="grid" id="grid">
-    <figure class="rv" data-c="kids"><img loading="lazy" src="img/mural-fruits-veg.jpg" alt="Fruits and vegetables mural"><figcaption>Fruits &amp; Vegetables Mural</figcaption></figure>
-    <figure class="rv" data-c="kids"><img loading="lazy" src="img/mural-numbers-days.jpg" alt="Numbers and days mural"><figcaption>Numbers, Months &amp; Days</figcaption></figure>
-    <figure class="rv" data-c="kids"><img loading="lazy" src="img/mural-animals-habits.jpg" alt="Animals and good habits mural"><figcaption>Animals, Insects &amp; Good Habits</figcaption></figure>
-    <figure class="rv" data-c="kids"><img loading="lazy" src="img/mural-city-rainbow.jpg" alt="Rainbow and city mural"><figcaption>Rainbow &amp; Colourful City</figcaption></figure>
-    <figure class="rv" data-c="kids wall"><img loading="lazy" src="img/mural-butterflies.jpg" alt="Butterflies wall painting"><figcaption>Butterflies &amp; Leaves</figcaption></figure>
-    <figure class="rv" data-c="wall"><img loading="lazy" src="img/mural-butterfly-big.jpg" alt="Large butterfly wall art"><figcaption>Big Butterfly Wall Art</figcaption></figure>
-    <figure class="rv" data-c="school"><img loading="lazy" src="img/school-fruits-veg.jpg" alt="Classroom fruits and vegetables"><figcaption>Classroom: Fruits &amp; Vegetables</figcaption></figure>
-    <figure class="rv" data-c="school"><img loading="lazy" src="img/school-good-habits.jpg" alt="Good habits and action words"><figcaption>Good Habits &amp; Action Words</figcaption></figure>
-    <figure class="rv" data-c="school"><img loading="lazy" src="img/school-body-parts.jpg" alt="Body parts and days mural"><figcaption>Body Parts &amp; Days of the Week</figcaption></figure>
-    <figure class="rv" data-c="wall"><img loading="lazy" src="img/wall-dancers.jpg" alt="Classical dancers wall painting"><figcaption>Classical Dancers (Wall Painting)</figcaption></figure>
-    <figure class="rv" data-c="wall"><img loading="lazy" src="img/wall-musician.jpg" alt="Musician portrait wall painting"><figcaption>Musician Portrait (Wall Painting)</figcaption></figure>
-    <figure class="rv" data-c="canvas"><img loading="lazy" src="img/canvas-daisies.jpg" alt="Daisies acrylic painting"><figcaption>Daisies, Acrylic on Canvas</figcaption></figure>
-    <figure class="rv" data-c="canvas"><img loading="lazy" src="img/canvas-eagle.jpg" alt="Eagle painting"><figcaption>Eagle, Acrylic on Canvas</figcaption></figure>
-    <figure class="rv" data-c="canvas"><img loading="lazy" src="img/canvas-abstract.jpg" alt="Abstract figure painting"><figcaption>Abstract Figure</figcaption></figure>
-    <figure class="rv" data-c="canvas"><img loading="lazy" src="img/canvas-giraffes.jpg" alt="Giraffes painting"><figcaption>Giraffes</figcaption></figure>
-    <figure class="rv" data-c="canvas"><img loading="lazy" src="img/ink-drawing.jpg" alt="Ink drawing"><figcaption>Ink Drawing</figcaption></figure>
+    <figure class="rv" data-c="kids"><div class="ph"><img loading="lazy" src="img/mural-fruits-veg.jpg" alt="Fruits and vegetables mural"></div><figcaption>Fruits &amp; Vegetables Mural</figcaption></figure>
+    <figure class="rv" data-c="kids"><div class="ph"><img loading="lazy" src="img/mural-numbers-days.jpg" alt="Numbers and days mural"></div><figcaption>Numbers, Months &amp; Days</figcaption></figure>
+    <figure class="rv" data-c="kids"><div class="ph"><img loading="lazy" src="img/mural-animals-habits.jpg" alt="Animals and good habits mural"></div><figcaption>Animals, Insects &amp; Good Habits</figcaption></figure>
+    <figure class="rv" data-c="kids"><div class="ph"><img loading="lazy" src="img/mural-city-rainbow.jpg" alt="Rainbow and city mural"></div><figcaption>Rainbow &amp; Colourful City</figcaption></figure>
+    <figure class="rv" data-c="kids wall"><div class="ph"><img loading="lazy" src="img/mural-butterflies.jpg" alt="Butterflies wall painting"></div><figcaption>Butterflies &amp; Leaves</figcaption></figure>
+    <figure class="rv" data-c="wall"><div class="ph"><img loading="lazy" src="img/mural-butterfly-big.jpg" alt="Large butterfly wall art"></div><figcaption>Big Butterfly Wall Art</figcaption></figure>
+    <figure class="rv" data-c="school"><div class="ph"><img loading="lazy" src="img/school-fruits-veg.jpg" alt="Classroom fruits and vegetables"></div><figcaption>Classroom: Fruits &amp; Vegetables</figcaption></figure>
+    <figure class="rv" data-c="school"><div class="ph"><img loading="lazy" src="img/school-good-habits.jpg" alt="Good habits and action words"></div><figcaption>Good Habits &amp; Action Words</figcaption></figure>
+    <figure class="rv" data-c="school"><div class="ph"><img loading="lazy" src="img/school-body-parts.jpg" alt="Body parts and days mural"></div><figcaption>Body Parts &amp; Days of the Week</figcaption></figure>
+    <figure class="rv" data-c="wall"><div class="ph"><img loading="lazy" src="img/wall-dancers.jpg" alt="Classical dancers wall painting"></div><figcaption>Classical Dancers (Wall Painting)</figcaption></figure>
+    <figure class="rv" data-c="wall"><div class="ph"><img loading="lazy" src="img/wall-musician.jpg" alt="Musician portrait wall painting"></div><figcaption>Musician Portrait (Wall Painting)</figcaption></figure>
+    <figure class="rv" data-c="canvas"><div class="ph"><img loading="lazy" src="img/canvas-daisies.jpg" alt="Daisies acrylic painting"></div><figcaption>Daisies, Acrylic on Canvas</figcaption></figure>
+    <figure class="rv" data-c="canvas"><div class="ph"><img loading="lazy" src="img/canvas-eagle.jpg" alt="Eagle painting"></div><figcaption>Eagle, Acrylic on Canvas</figcaption></figure>
+    <figure class="rv" data-c="canvas"><div class="ph"><img loading="lazy" src="img/canvas-abstract.jpg" alt="Abstract figure painting"></div><figcaption>Abstract Figure</figcaption></figure>
+    <figure class="rv" data-c="canvas"><div class="ph"><img loading="lazy" src="img/canvas-giraffes.jpg" alt="Giraffes painting"></div><figcaption>Giraffes</figcaption></figure>
+    <figure class="rv" data-c="canvas"><div class="ph"><img loading="lazy" src="img/ink-drawing.jpg" alt="Ink drawing"></div><figcaption>Ink Drawing</figcaption></figure>
   </div>
 </div></section>
 
