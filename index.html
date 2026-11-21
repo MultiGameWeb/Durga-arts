@@ -1,1 +1,201 @@
+<!doctype html>
+<html lang="te">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Durga Arts and Paintings – Wall Murals & Canvas Art, Hyderabad</title>
+<meta name="description" content="Durga Arts and Paintings, Hyderabad. 15 years experience in school wall murals, play school paintings, interior wall art and canvas paintings.">
+<style>
+:root{--bg:#fffaf2;--ink:#2b2118;--muted:#6f6252;--brand:#c2410c;--brand2:#7c2d12;--card:#fff;--line:#eadfce;--wa:#1faa59}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Telugu",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:20;background:rgba(255,250,242,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{font-weight:800;color:var(--brand2);text-decoration:none;font-size:1.05rem}
+.logo span{color:var(--brand)}
+nav{display:flex;gap:18px;font-size:.92rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--brand)}
+@media(max-width:640px){nav{display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;font-size:1rem}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{filter:brightness(.92)}
+.btn-line{border-color:var(--brand);color:var(--brand)}
+.hero{padding:44px 0 36px}
+.hero .wrap{display:grid;gap:28px;grid-template-columns:1.1fr 1fr;align-items:center}
+@media(max-width:800px){.hero .wrap{grid-template-columns:1fr}}
+.tag{display:inline-block;background:#ffedd5;color:var(--brand2);padding:4px 12px;border-radius:999px;font-size:.85rem;font-weight:600;margin-bottom:12px}
+h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;color:var(--brand2);margin-bottom:12px}
+.hero p{color:var(--muted);font-size:1.08rem;margin-bottom:20px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero img{border-radius:18px;box-shadow:0 14px 40px rgba(124,45,18,.2);aspect-ratio:4/3;object-fit:cover;width:100%}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 0}
+.stats div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.stats b{display:block;font-size:1.6rem;color:var(--brand)}
+.stats small{color:var(--muted)}
+section{padding:48px 0}
+h2{font-size:1.7rem;color:var(--brand2);margin-bottom:6px}
+.sub{color:var(--muted);margin-bottom:24px}
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card .ic{font-size:2rem;margin-bottom:8px}
+.card h3{margin-bottom:6px}
+.card p{color:var(--muted);font-size:.95rem}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.filters button{border:1.5px solid var(--line);background:#fff;padding:8px 16px;border-radius:999px;cursor:pointer;font-size:.95rem;font-family:inherit;color:var(--ink)}
+.filters button.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+.grid{columns:3 260px;column-gap:14px}
+.grid figure{break-inside:avoid;margin-bottom:14px;border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--line);cursor:zoom-in}
+.grid figure.hide{display:none}
+.grid img{width:100%;height:auto;transition:transform .3s}
+.grid figure:hover img{transform:scale(1.03)}
+.grid figcaption{padding:10px 12px;font-size:.88rem;color:var(--muted)}
+.clients{display:flex;flex-wrap:wrap;gap:10px}
+.clients span{background:#fff;border:1px solid var(--line);padding:10px 18px;border-radius:12px;font-weight:600;color:var(--brand2)}
+.alt{background:#fff3e2}
+.steps{counter-reset:s;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.steps div{background:#fff;border-radius:14px;padding:18px;border:1px solid var(--line);counter-increment:s}
+.steps div::before{content:counter(s);display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;margin-bottom:8px}
+.about{display:grid;gap:24px;grid-template-columns:1fr}
+.contact-box{background:var(--brand2);color:#fff;border-radius:22px;padding:36px 24px;text-align:center}
+.contact-box h2{color:#fff}
+.contact-box p{opacity:.9;margin-bottom:18px}
+.contact-box .btn-line{border-color:#fff;color:#fff}
+footer{padding:26px 0 90px;text-align:center;color:var(--muted);font-size:.88rem}
+footer a{margin:0 8px}
+.float{position:fixed;right:16px;bottom:16px;z-index:30;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:50;padding:16px;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-height:92vh;max-width:96vw;border-radius:8px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top">Durga <span>Arts</span></a>
+  <nav><a href="#services">Services</a><a href="#work">Our Work</a><a href="#clients">Clients</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  <a class="btn btn-wa" style="padding:8px 16px;font-size:.9rem" href="https://wa.me/918008157900?text=Hello%20Durga%20Arts%2C%20I%20want%20to%20know%20about%20wall%20painting">WhatsApp</a>
+</div></header>
 
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <span class="tag">Hyderabad · 15 Years Experience</span>
+    <h1>Mee walls ki rangulu, mee kids ki kalalu.</h1>
+    <p>School wall murals, play school paintings, interior wall art and canvas paintings. Every wall ni oka colourful story ga marustam.</p>
+    <div class="cta">
+      <a class="btn btn-wa" href="https://wa.me/918008157900?text=Hello%20Durga%20Arts%2C%20I%20want%20a%20free%20quote%20for%20wall%20painting">💬 WhatsApp lo Free Quote</a>
+      <a class="btn btn-line" href="tel:+918008157900">📞 Call</a>
+    </div>
+    <div class="stats" style="margin-top:26px">
+      <div><b>15+</b><small>Years</small></div>
+      <div><b>Many</b><small>Schools &amp; Play Schools</small></div>
+      <div><b>Hyd</b><small>Hyderabad</small></div>
+    </div>
+  </div>
+  <img src="img/mural-fruits-veg.jpg" alt="Kids fruits and vegetables wall mural" fetchpriority="high">
+</div></div>
+
+<section id="services"><div class="wrap">
+  <h2>Mee Services</h2><p class="sub">Meeru kavalsina art, mee walls meedha leka canvas meedha.</p>
+  <div class="cards">
+    <div class="card"><div class="ic">🏫</div><h3>School Wall Murals</h3><p>Fruits, animals, numbers, good habits, body parts. Pillalu nerchukune colourful learning walls.</p></div>
+    <div class="card"><div class="ic">🧸</div><h3>Play School Paintings</h3><p>Cartoons, rainbows, butterflies, cities. Pillalaku nachche fun themes.</p></div>
+    <div class="card"><div class="ic">🏠</div><h3>Interior Wall Paintings</h3><p>Homes, offices, shops ki custom wall art and decorative murals.</p></div>
+    <div class="card"><div class="ic">🖼️</div><h3>Canvas Paintings</h3><p>Acrylic and oil paintings, portraits, custom orders.</p></div>
+  </div>
+</div></section>
+
+<section id="work" class="alt"><div class="wrap">
+  <h2>Our Work</h2><p class="sub">Photo meeda click cheste peddaga chudochu.</p>
+  <div class="filters" id="filters">
+    <button class="on" data-f="all">All</button>
+    <button data-f="kids">Kids &amp; Play School</button>
+    <button data-f="school">School Walls</button>
+    <button data-f="canvas">Canvas Paintings</button>
+    <button data-f="wall">Wall Art</button>
+  </div>
+  <div class="grid" id="grid">
+    <figure data-c="kids"><img loading="lazy" src="img/mural-fruits-veg.jpg" alt="Fruits and vegetables mural"><figcaption>Fruits &amp; Vegetables Mural</figcaption></figure>
+    <figure data-c="kids"><img loading="lazy" src="img/mural-numbers-days.jpg" alt="Numbers and days mural"><figcaption>Numbers, Months &amp; Days</figcaption></figure>
+    <figure data-c="kids"><img loading="lazy" src="img/mural-animals-habits.jpg" alt="Animals and good habits mural"><figcaption>Animals, Insects &amp; Good Habits</figcaption></figure>
+    <figure data-c="kids"><img loading="lazy" src="img/mural-city-rainbow.jpg" alt="Rainbow and city mural"><figcaption>Rainbow &amp; Colourful City</figcaption></figure>
+    <figure data-c="kids wall"><img loading="lazy" src="img/mural-butterflies.jpg" alt="Butterflies wall painting"><figcaption>Butterflies &amp; Leaves</figcaption></figure>
+    <figure data-c="wall"><img loading="lazy" src="img/mural-butterfly-big.jpg" alt="Large butterfly wall art"><figcaption>Big Butterfly Wall Art</figcaption></figure>
+    <figure data-c="school"><img loading="lazy" src="img/school-fruits-veg.jpg" alt="Classroom fruits and vegetables"><figcaption>Classroom: Fruits &amp; Vegetables</figcaption></figure>
+    <figure data-c="school"><img loading="lazy" src="img/school-good-habits.jpg" alt="Good habits and action words"><figcaption>Good Habits &amp; Action Words</figcaption></figure>
+    <figure data-c="school"><img loading="lazy" src="img/school-body-parts.jpg" alt="Body parts and days mural"><figcaption>Body Parts &amp; Days of the Week</figcaption></figure>
+    <figure data-c="wall"><img loading="lazy" src="img/wall-dancers.jpg" alt="Classical dancers wall painting"><figcaption>Classical Dancers (Wall Painting)</figcaption></figure>
+    <figure data-c="wall"><img loading="lazy" src="img/wall-musician.jpg" alt="Musician portrait wall painting"><figcaption>Musician Portrait (Wall Painting)</figcaption></figure>
+    <figure data-c="canvas"><img loading="lazy" src="img/canvas-daisies.jpg" alt="Daisies acrylic painting"><figcaption>Daisies, Acrylic on Canvas</figcaption></figure>
+    <figure data-c="canvas"><img loading="lazy" src="img/canvas-eagle.jpg" alt="Eagle painting"><figcaption>Eagle, Acrylic on Canvas</figcaption></figure>
+    <figure data-c="canvas"><img loading="lazy" src="img/canvas-abstract.jpg" alt="Abstract figure painting"><figcaption>Abstract Figure</figcaption></figure>
+    <figure data-c="canvas"><img loading="lazy" src="img/canvas-giraffes.jpg" alt="Giraffes painting"><figcaption>Giraffes</figcaption></figure>
+    <figure data-c="canvas"><img loading="lazy" src="img/ink-drawing.jpg" alt="Ink drawing"><figcaption>Ink Drawing</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="clients"><div class="wrap">
+  <h2>Mem Work Chesina Places</h2><p class="sub">Schools and play schools Hyderabad lo.</p>
+  <div class="clients">
+    <span>Krishnaveni Schools</span><span>TVR Model Schools</span><span>Gowtham Model Schools</span><span>SR DG Schools</span><span>+ Chala Play Schools</span>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>Ela Panichestam</h2><p class="sub">Simple 4 steps.</p>
+  <div class="steps">
+    <div><b>Call / WhatsApp</b><br><small>Mee wall photo pampandi, kavalsina theme cheppandi.</small></div>
+    <div><b>Design &amp; Quote</b><br><small>Idea and price cheptam.</small></div>
+    <div><b>Painting</b><br><small>Quality paints tho work start.</small></div>
+    <div><b>Finish</b><br><small>Mee approval tho handover.</small></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap about">
+  <div>
+    <h2>About Us</h2>
+    <p style="margin-top:10px">Durga Arts and Paintings Hyderabad lo 15 years nundi wall murals mariyu canvas paintings chestunnaru. Krishnaveni Schools, TVR Model Schools, Gowtham Model Schools, SR DG Schools tho patu enno play schools lo work chesaru.</p>
+    <p style="margin-top:10px">Pillalaku nachche, nerchukune ki upayogapade colourful themes, alage homes and offices ki custom interior wall art, canvas paintings kuda chestamu.</p>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="contact-box">
+    <h2>Mee Wall ki Free Quote</h2>
+    <p>Mee wall photo WhatsApp lo pampandi. Nenu mee ki idea and price cheptanu.</p>
+    <div class="cta" style="justify-content:center">
+      <a class="btn btn-wa" href="https://wa.me/918008157900?text=Hello%20Durga%20Arts%2C%20I%20want%20a%20free%20quote">💬 WhatsApp: 8008157900</a>
+      <a class="btn btn-line" href="tel:+918008157900">📞 Call</a>
+    </div>
+    <p style="margin-top:16px;font-size:.9rem">📍 Hyderabad</p>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div>© <span id="y"></span> Durga Arts and Paintings, Hyderabad</div>
+  <div style="margin-top:6px"><a href="privacy.html">Privacy Policy</a></div>
+</div></footer>
+
+<a class="btn btn-wa float" href="https://wa.me/918008157900?text=Hello%20Durga%20Arts%2C%20I%20want%20a%20free%20quote">💬 WhatsApp</a>
+<div id="lb"><img alt=""></div>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+const figs=[...document.querySelectorAll('#grid figure')];
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('on',x===b));
+  const f=b.dataset.f;
+  figs.forEach(g=>g.classList.toggle('hide',f!=='all'&&!g.dataset.c.split(' ').includes(f)));
+});
+const lb=document.getElementById('lb'),li=lb.querySelector('img');
+figs.forEach(g=>g.addEventListener('click',()=>{li.src=g.querySelector('img').src;lb.classList.add('on')}));
+lb.addEventListener('click',()=>lb.classList.remove('on'));
+</script>
+</body>
+</html>
