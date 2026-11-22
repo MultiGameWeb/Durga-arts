@@ -108,6 +108,12 @@ section{scroll-margin-top:64px}
 }
 .grid figure:focus-visible,.filters button:focus-visible,.btn:focus-visible,nav a:focus-visible,.logo:focus-visible,#lbx:focus-visible{outline:3px solid #1d4ed8;outline-offset:2px}
 #lbx{position:absolute;top:14px;right:14px;width:46px;height:46px;border:0;border-radius:50%;background:#fff;color:#2b2118;font-size:1.6rem;line-height:1;cursor:pointer}
+.hero-art{position:relative}
+.paint-card{position:absolute;right:-8px;bottom:-18px;width:132px;height:132px;background:#fffaf2;border:3px solid #fff;border-radius:22px;box-shadow:0 14px 30px rgba(124,45,18,.28);overflow:visible;animation:sway 7s ease-in-out infinite;transform-origin:center}
+.paint-card svg{display:block;overflow:visible;border-radius:18px}
+@keyframes sway{0%,100%{transform:perspective(500px) rotateY(-10deg) rotateX(5deg)}50%{transform:perspective(500px) rotateY(10deg) rotateX(-3deg)}}
+@media(max-width:640px){.paint-card{width:104px;height:104px;right:4px;bottom:-14px}}
+@media(prefers-reduced-motion:reduce){.paint-card{animation:none}}
 </style>
 </head>
 <body>
@@ -133,7 +139,26 @@ section{scroll-margin-top:64px}
       <div><b>Hyd</b><small>Hyderabad</small></div>
     </div>
   </div>
-  <img src="img/mural-fruits-veg.jpg" alt="Kids fruits and vegetables wall mural" fetchpriority="high">
+  <div class="hero-art">
+    <img src="img/mural-fruits-veg.jpg" alt="Kids fruits and vegetables wall mural" fetchpriority="high">
+    <div class="paint-card" aria-hidden="true">
+      <svg id="paintsvg" viewBox="0 0 200 200" width="100%" height="100%">
+        <circle id="hfill" cx="100" cy="102" r="56" fill="#eab308" opacity="0"/>
+        <path class="st" data-c="#eab308" data-w="16" d="M100 40 A62 62 0 0 1 100 164 A62 62 0 0 1 100 40" />
+        <path class="st" data-c="#2b2118" data-w="11" d="M76 84 L76 102" />
+        <path class="st" data-c="#2b2118" data-w="11" d="M124 84 L124 102" />
+        <path class="st" data-c="#2b2118" data-w="8" d="M68 120 Q100 152 132 120" />
+        <g id="brush" opacity="0">
+          <ellipse id="bshadow" cx="4" cy="6" rx="9" ry="3" fill="#000" opacity=".18"/>
+          <g transform="rotate(38)">
+            <path id="btip" d="M-5 0 Q0 -3 5 0 L6 -14 L-6 -14 Z" fill="#eab308"/>
+            <rect x="-6" y="-26" width="12" height="13" rx="2" fill="#b8bcc4"/>
+            <rect x="-4.5" y="-70" width="9" height="45" rx="4.5" fill="#c2410c"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
 </div></div>
 
 <section id="services"><div class="wrap">
@@ -243,6 +268,46 @@ if(!reduce){
   document.getElementById('filters').addEventListener('click',()=>setTimeout(req,50));
   addEventListener('load',req);req();
 }
+
+/* painting smiley: brush paints a small smiley, then repeats */
+(function(){
+  const svg=document.getElementById('paintsvg');if(!svg)return;
+  const strokes=[...svg.querySelectorAll('.st')],brush=document.getElementById('brush'),
+        fill=document.getElementById('hfill'),shadow=document.getElementById('bshadow'),tip=document.getElementById('btip');
+  const S=strokes.map(el=>({el,L:el.getTotalLength(),c:el.dataset.c,w:+el.dataset.w}));
+  S.forEach(o=>{o.el.setAttribute('stroke',o.c);o.el.setAttribute('stroke-width',o.w);o.el.setAttribute('fill','none');o.el.setAttribute('stroke-linecap','round');o.el.setAttribute('stroke-dasharray',o.L+' '+o.L);o.el.style.strokeDashoffset=o.L;o.el.style.opacity=0});
+  const T=10.4,AWAY={x:172,y:176},START={x:172,y:30};
+  const plan=[{i:0,a:.5,b:3.0},{i:1,a:3.5,b:4.0},{i:2,a:4.4,b:4.9},{i:3,a:5.4,b:6.8}];
+  const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+  const pt=(o,p)=>{const q=o.el.getPointAtLength(o.L*p);return{x:q.x,y:q.y}};
+  function frame(t){
+    const fade=t>9.4?Math.max(0,1-(t-9.4)):1;
+    let pos,lifted=true,color=S[0].c;
+    S.forEach((o,k)=>{const pl=plan[k],p=Math.max(0,Math.min(1,(t-pl.a)/(pl.b-pl.a)));
+      o.el.style.strokeDashoffset=o.L*(1-p);o.el.style.opacity=(p>0.002?1:0)*fade;});
+    fill.setAttribute('opacity',(Math.max(0,Math.min(1,(t-3.0)/.5))*fade).toFixed(3));
+    // brush position
+    let prev=START;
+    for(let k=0;k<plan.length;k++){const pl=plan[k],o=S[pl.i];
+      if(t<pl.a){const u=ease(Math.max(0,Math.min(1,(t-(k?plan[k-1].b:0))/(pl.a-(k?plan[k-1].b:0)))));const st=pt(o,0);pos={x:prev.x+(st.x-prev.x)*u,y:prev.y+(st.y-prev.y)*u};color=o.c;break}
+      if(t<=pl.b){const p=(t-pl.a)/(pl.b-pl.a);pos=pt(o,p);lifted=false;color=o.c;break}
+      prev=pt(o,1);
+    }
+    if(!pos){const u=ease(Math.max(0,Math.min(1,(t-6.8)/.9)));pos={x:prev.x+(AWAY.x-prev.x)*u,y:prev.y+(AWAY.y-prev.y)*u}}
+    brush.setAttribute('opacity',fade);
+    const lift=lifted?1:0;
+    brush.setAttribute('transform','translate('+(pos.x+lift*4).toFixed(1)+' '+(pos.y-lift*7).toFixed(1)+')');
+    shadow.setAttribute('opacity',lifted?.12:.0);tip.setAttribute('fill',color);
+  }
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){frame(8.5);brush.setAttribute('opacity',0);return}
+  let t0=null,raf=0,on=true;
+  const loop=ts=>{if(t0===null)t0=ts;frame(((ts-t0)/1000)%T);raf=on?requestAnimationFrame(loop):0};
+  const start=()=>{if(!raf){t0=null;raf=requestAnimationFrame(loop)}};
+  if('IntersectionObserver' in window){new IntersectionObserver(es=>{on=es[0].isIntersecting;if(on)start()}).observe(svg)}else start();
+  document.addEventListener('visibilitychange',()=>{on=!document.hidden;if(on)start()});
+  start();
+})();
 const lb=document.getElementById('lb'),li=lb.querySelector('img'),lbx=document.getElementById('lbx');let last=null;
 const openLb=g=>{const im=g.querySelector('img');li.src=im.src;li.alt=im.alt;last=g;lb.classList.add('on');lbx.focus()};
 const closeLb=()=>{lb.classList.remove('on');if(last)last.focus({preventScroll:true})};
