@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://multigameweb.github.io/Durga-arts/sitemap.xml
